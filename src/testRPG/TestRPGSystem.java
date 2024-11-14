@@ -11,6 +11,13 @@ public class TestRPGSystem {
 	}
 	
 	protected void run() {
+		gameStartMessage();
+//		while(isRun) {
+//			
+//		}
+	}
+
+	private void gameStartMessage() {
 		
 	}
 }
