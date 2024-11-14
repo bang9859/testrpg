@@ -1,5 +1,10 @@
 package testRPG;
 
-public class Monster extends Unit{
+abstract public class Monster extends Unit{
 
+	protected Monster(String name, int hp, int power, int shield) {
+		super(name, hp, power, shield);
+		
+	}
+	
 }
