@@ -7,4 +7,6 @@ abstract public class Monster extends Unit{
 		
 	}
 	
+	abstract protected void MonsterSkill();
+
 }
