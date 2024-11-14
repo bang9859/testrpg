@@ -17,6 +17,7 @@ abstract public class Unit {
 		return name;
 	}
 
+
 	protected int getHp() {
 		return hp;
 	}
