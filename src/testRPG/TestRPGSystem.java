@@ -21,15 +21,20 @@ public class TestRPGSystem {
 	private final int ROAD = 5;
 	private final int BACK = 6;
 
+	private final int GUILDLIST = 1;
+	private final int PARTIESCHANGE = 2;
+	private final int BACK_GUILD = 0;
+
 	private boolean isRun = true;
+
+	private StringBuffer buffer = new StringBuffer();
+	protected static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	private BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
+	private User user = User.getInstance();
 
 	private TestRPGSystem() {
 	}
 
-	private StringBuffer buffer = new StringBuffer();
-
-	protected static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-	private BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 	private static TestRPGSystem instance = new TestRPGSystem();
 
 	protected static TestRPGSystem getInstance() {
@@ -100,6 +105,22 @@ public class TestRPGSystem {
 	}
 
 	private void guild() {
+		showGuildMenu();
+	}
+
+	private void showGuildMenu() {
+		printOut("=====[GUILD]=====");
+		printOut("[1.길드원 목록] [2.파티원 교체] [0.뒤로가기]");
+		int sel = (int) input("입력", NUMBER);
+		if (sel == GUILDLIST) {
+			for(int i=0;i<user.guildList.size();i++){
+				printOut(user.guildList.get(i));
+			}
+		} else if (sel == PARTIESCHANGE) {
+			
+		} else if (sel == BACK_GUILD) {
+
+		}
 
 	}
 

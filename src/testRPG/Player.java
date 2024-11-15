@@ -3,13 +3,13 @@ package testRPG;
 abstract public class Player extends Unit {
 	private int exp;
 	private int level;
-	private boolean onGuild;
+	private boolean onParty;
 
-	protected Player(String name, int hp, int power, int exp, int level, boolean onGuild) {
+	protected Player(String name, int hp, int power, int exp, int level, boolean onParty) {
 		super(name, hp, power);
 		this.exp = exp;
 		this.level = level;
-		this.onGuild = onGuild;
+		this.onParty = onParty;
 	}
 
 	protected int getExp() {
@@ -28,14 +28,19 @@ abstract public class Player extends Unit {
 		this.level = level;
 	}
 
-	protected boolean isOnGuild() {
-		return onGuild;
+	protected boolean getOnParty() {
+		return onParty;
 	}
 
-	protected void setOnGuild(boolean onGuild) {
-		this.onGuild = onGuild;
+	protected void setOnParty(boolean onParty) {
+		this.onParty = onParty;
 	}
 
 	abstract protected void PlayerSkill();
-
+	
+	@Override
+	public String toString() {
+		String info = String.format("[이름 : %s] [체력 : %d] [공격력 : %d] [파티참여 여부:%s]", getName(),getHp(),getPower(),getOnParty());
+		return info;
+	}
 }
