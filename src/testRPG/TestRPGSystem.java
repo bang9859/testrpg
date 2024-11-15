@@ -42,34 +42,31 @@ public class TestRPGSystem {
 			e.printStackTrace();
 		} finally {
 			try {
-				writer.close();
-				reader.close();
 			} catch (Exception e2) {
 				e2.printStackTrace();
 			}
 		}
+		while (true) {
+			String input = (String) input("입력", STRING);
+			if (input.equals(""))
+				break;
+		}
+		System.out.println("다음스테이지 이동~");
 
 	}
 
 	private Object input(String msg, int n) {
 		buffer.setLength(0);
-		buffer.append(msg);
-		String input = null;
+		buffer.append(msg+" : ");
+		String input = "";
 		try {
 			writer.append(buffer);
-			buffer.setLength(0);
 			input = reader.readLine();
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			try {
-				writer.close();
-				reader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+		} 
+		
 		if (n == STRING) {
 			return input;
 		} else {
