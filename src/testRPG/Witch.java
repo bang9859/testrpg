@@ -2,8 +2,8 @@ package testRPG;
 
 public class Witch extends Monster{
 
-	protected Witch(String name, int hp, int power, int shield) {
-		super(name, hp, power, shield);
+	protected Witch(String name, int hp, int power) {
+		super(name, hp, power);
 	}
 
 	@Override

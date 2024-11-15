@@ -5,8 +5,8 @@ abstract public class Player extends Unit {
 	private int level;
 	private boolean onGuild;
 
-	protected Player(String name, int hp, int power, int shield, int exp, int level, boolean onGuild) {
-		super(name, hp, power, shield);
+	protected Player(String name, int hp, int power, int exp, int level, boolean onGuild) {
+		super(name, hp, power);
 		this.exp = exp;
 		this.level = level;
 		this.onGuild = onGuild;

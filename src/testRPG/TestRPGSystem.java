@@ -14,6 +14,13 @@ public class TestRPGSystem {
 	private final int SETTING = 2;
 	private final int EXIT = 3;
 
+	private final int GUILD = 1;
+	private final int STORE = 2;
+	private final int INVENTORY = 3;
+	private final int SAVE = 4;
+	private final int ROAD = 5;
+	private final int BACK = 6;
+
 	private boolean isRun = true;
 
 	private TestRPGSystem() {
@@ -57,13 +64,48 @@ public class TestRPGSystem {
 	private void setting() {
 		printOut("=====[SETTING]=====");
 		printOut("[1.길드관리] [2.상점] [3.인벤토리]");
-		printOut("[4.저장] [5.로드] [6.종료] [0. 뒤로가기]\n");
+		printOut("[4.저장] [5.로드] [6.종료] \n");
+		int sel = (int) input("입력", NUMBER);
+		if (sel == GUILD) {
+			guild();
+		} else if (sel == STORE) {
+			store();
+		} else if (sel == INVENTORY) {
+			inventory();
+		} else if (sel == SAVE) {
+			save();
+		} else if (sel == ROAD) {
+			road();
+		} else if (sel == BACK) {
+
+		} else {
+			System.err.println("유효하지 않은 입력값입니다.");
+		}
+	}
+
+	private void road() {
+
+	}
+
+	private void save() {
+
+	}
+
+	private void inventory() {
+
+	}
+
+	private void store() {
+
+	}
+
+	private void guild() {
 
 	}
 
 	private void printOut(String msg) {
 		buffer.setLength(0);
-		buffer.append(msg+"\n");
+		buffer.append(msg + "\n");
 		try {
 			writer.append(buffer);
 			writer.flush();

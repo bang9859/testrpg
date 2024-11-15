@@ -4,19 +4,16 @@ abstract public class Unit {
 	private String name;
 	private int hp;
 	private int power;
-	private int shield;
 
-	protected Unit(String name, int hp, int power, int shield) {
+	protected Unit(String name, int hp, int power) {
 		this.name = name;
 		this.hp = hp;
 		this.power = power;
-		this.shield = shield;
 	}
 
 	protected String getName() {
 		return name;
 	}
-
 
 	protected int getHp() {
 		return hp;
@@ -32,14 +29,6 @@ abstract public class Unit {
 
 	protected void setPower(int power) {
 		this.power = power;
-	}
-
-	protected int getShield() {
-		return shield;
-	}
-
-	protected void setShield(int shield) {
-		this.shield = shield;
 	}
 
 	protected void Attack(Unit target) {
